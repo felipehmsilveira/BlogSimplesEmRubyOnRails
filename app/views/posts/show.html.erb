@@ -10,6 +10,7 @@
   <strong>Conteudo:</strong>
   <%= @post.conteudo %>
 </p>
+<%= link_to 'Apagar POST', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <br><hr>
 <h1>Comentarios</h1>
 
@@ -21,6 +22,7 @@
 			<hr style="background-color: red">
 		<%end%>
 	<%end%>
+
 <hr>
 <h2>Deixe seu comentario</h2>
 
