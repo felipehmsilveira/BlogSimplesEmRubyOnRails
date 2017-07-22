@@ -1,31 +1,120 @@
-<p id="notice"><%= notice %></p>
+    
+  
 
-<h1>Comentarios</h1>
+      <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" style="color: black">Autor: Felipe Henrique</a>
+            </div>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Comentario</th>
-      <th>Post</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @comentarios.each do |comentario| %>
-      <tr>
-        <td><%= comentario.nome %></td>
-        <td><%= comentario.comentario %></td>
-        <td><%= comentario.post %></td>
-        <td><%= link_to 'Show', comentario %></td>
-        <td><%= link_to 'Edit', edit_comentario_path(comentario) %></td>
-        <td><%= link_to 'Destroy', comentario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  
 
-<br>
-<%= link_to 'Ir para POST', posts_path %>
-<%= link_to 'New Comentario', new_comentario_path %>
+
+
+
+
+  <!--Header -->
+    <header class="intro-header" style="background-image: url('http://www.rubyinside.com/advent2006/wallpaper1920.jpg')">
+        <div class="container" style="height: 400px">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading" style="text-align: center;">
+                        <h1 >Blog Ruby On Rails</h1>
+                        <hr class="small">
+                        <span class="subheading">Desenvolvimento em Ruby On Rails</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+                  <h1 class="post-title" style="text-align: center">COMENTÁRIOS</h1>
+                  <hr>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="post.html">
+                      <% if @comentarios.size > 0%>
+                        <% @comentarios.reverse.each do |comentario| %>
+                          <h2 class="post-title">
+                              <%= comentario.nome %>
+                          </h2>
+                          
+                          <h3 class="post-subtitle">
+                               <%= comentario.comentario %>
+                          </h3>
+                          <p class="post-meta"><%= time_ago_in_words(comentario.created_at) %></p> 
+                          <hr>
+                      <%end%> 
+                    </a>  
+          
+                         <%end%>
+
+                      
+                    
+                   
+                   
+                </div>
+                
+                <hr>
+                
+                <hr>
+                <div type="button" class="btn btn-default navbar-btn"><%= link_to 'New Post', new_post_path %></div>
+                <div type="button" class="btn btn-default navbar-btn"><%= link_to 'Back', post_path(@post) %></div>
+      
+
+     <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <ul class="list-inline text-center">
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                   </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">Copyright &copy; Felipe Henrique Monteiro da Silveira 2017</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+

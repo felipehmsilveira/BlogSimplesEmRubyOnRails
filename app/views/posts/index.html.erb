@@ -54,7 +54,7 @@
                              <%= post.conteudo %></h3>
                     </a>
                     
-                    <p class="post-meta">Posted by User on September 24, 2014 <%= link_to 'Edit', edit_post_path(post) %></p> 
+                    <p class="post-meta">Posted: <%= time_ago_in_words(post.created_at) %>  <%= link_to 'Edit', edit_post_path(post) %></p> 
                     <hr>
                     <% end %>
                 </div>
