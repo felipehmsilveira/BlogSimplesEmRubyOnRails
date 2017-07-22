@@ -30,34 +30,18 @@ class ComentariosController < ApplicationController
         @post01 = Post.find(@comentario.post_id)
         redirect_to post_comentarios_path(@post), notice: 'Comentário gravado com sucesso!'
       else
-        format.html { render :new }
-        format.json { render json: @comentario.errors, status: :unprocessable_entity }
+        render :new
       end
     
   end
 
-  # PATCH/PUT /comentarios/1
-  # PATCH/PUT /comentarios/1.json
-  def update
-    respond_to do |format|
-      if @comentario.update(comentario_params)
-        @post01 = Post.find(@comentario.post_id)
-        format.html { redirect_to @post01, notice: 'Comentario was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comentario }
-      else
-        format.html { render :edit }
-        format.json { render json: @comentario.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /comentarios/1
+  # PATCDELETE /comentarios/1
   # DELETE /comentarios/1.json
   def destroy
     @comentario.destroy
     respond_to do |format|
         @post01 = Post.find(@comentario.post_id)
-        format.html { redirect_to @post01, notice: 'Comentario was successfully destroyed.' }
+        format.html { redirect_to @post01, notice: 'Comentario foi removido com sucesso.' }
       format.json { head :no_content }
     end
   end

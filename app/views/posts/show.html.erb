@@ -49,7 +49,11 @@
                     
                         <h2 class="post-title">
                        <%= @post.titulo %>
-                        </h2>
+                       <hr>
+                       </h2>
+                       <h4>Imagem:</h4>
+                       <%= image_tag @post.avatar.url(:medium) %>
+                        
                          <hr>
                         <h3 class="post-subtitle">
                              <%= @post.conteudo %></h3>
