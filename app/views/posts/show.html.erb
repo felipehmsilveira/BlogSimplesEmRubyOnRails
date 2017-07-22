@@ -74,11 +74,17 @@
 								<%end%>
 
 							<hr>
-							<h2>Deixe seu comentario</h2>
+
+
 							
 
+				<div type="button" class="btn btn-default navbar-btn">				
+					<%= link_to 'Novo Comentário', new_post_comentario_path(@post)%> 
+				</div>
+
+
 				<div type="button" class="btn btn-default navbar-btn">
-<%= link_to pluralize(@post.comentarios.size, 'Comentário', 'Comentários'), post_comentarios_path(@post)%> 
+					<%= link_to pluralize(@post.comentarios.size, 'Comentário', 'Comentários'), post_comentarios_path(@post)%> 
                 </div>	
 
 

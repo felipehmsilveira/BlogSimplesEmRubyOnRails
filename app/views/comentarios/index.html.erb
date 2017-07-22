@@ -15,7 +15,7 @@
         </div>
 
 
-  
+  </nav>
 
 
 
@@ -46,7 +46,7 @@
                   <hr>
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
-                    <a href="post.html">
+
                       <% if @comentarios.size > 0%>
                         <% @comentarios.reverse.each do |comentario| %>
                           <h2 class="post-title">
@@ -59,21 +59,22 @@
                           <p class="post-meta"><%= time_ago_in_words(comentario.created_at) %></p> 
                           <hr>
                       <%end%> 
-                    </a>  
-          
-                         <%end%>
-
-                      
                     
-                   
-                   
+          
+                         <%end%> 
                 </div>
+                                <hr>
                 
                 <hr>
-                
-                <hr>
-                <div type="button" class="btn btn-default navbar-btn"><%= link_to 'New Post', new_post_path %></div>
-                <div type="button" class="btn btn-default navbar-btn"><%= link_to 'Back', post_path(@post) %></div>
+                  <div type="button" class="btn btn-default navbar-btn"><%= link_to 'New Post', new_post_path %></div>
+                  <div type="button" class="btn btn-default navbar-btn"><%= link_to 'Back', post_path(@post) %></div>
+            </div>
+
+           </div>
+
+       </div>
+
+
       
 
      <!-- Footer -->

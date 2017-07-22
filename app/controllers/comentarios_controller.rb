@@ -9,35 +9,31 @@ class ComentariosController < ApplicationController
 
   end
 
-  # GET /comentarios/1
-  # GET /comentarios/1.json
-  def show
-  end
+
 
   # GET /comentarios/new
   def new
-    @comentario = params[:comentarios]
+    @post = Post.find(params[:post_id])
+    @comentario = @post.comentarios.new
   end
 
-  # GET /comentarios/1/edit
-  def edit
-  end
+  
 
   # POST /comentarios
   # POST /comentarios.json
   def create
-    @comentario = Comentario.new(comentario_params)
+    @post = Post.find(params[:post_id])
+    @comentario = @post.comentarios.new(comentario_params)
 
-    respond_to do |format|
+    
       if @comentario.save
         @post01 = Post.find(@comentario.post_id)
-        format.html { redirect_to @post01, notice: 'Comentario was successfully created.' }
-        format.json { render :show, status: :created, location: @comentario }
+        redirect_to post_comentarios_path(@post), notice: 'Comentário gravado com sucesso!'
       else
         format.html { render :new }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
       end
-    end
+    
   end
 
   # PATCH/PUT /comentarios/1
